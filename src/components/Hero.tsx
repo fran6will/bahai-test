@@ -44,11 +44,11 @@ export default function Hero() {
           }}
         >
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-800 leading-tight">
-            Bienvenue à la communauté bahá'íe de Montréal
+            Bienvenue à la communauté bahá&apos;íe de Montréal
           </h1>
 
           <p className="text-lg md:text-xl mb-8 text-gray-700 leading-relaxed">
-            Nous nous inspirons des enseignements de la foi bahá'íe, dont le but fondamental est de promouvoir l'unité de l'humanité et de cultiver un esprit d'amour et de fraternité universelle.
+            Nous nous inspirons des enseignements de la foi bahá&apos;íe, dont le but fondamental est de promouvoir l&apos;unité de l&apos;humanité et de cultiver un esprit d&apos;amour et de fraternité universelle.
           </p>
 
           <motion.button

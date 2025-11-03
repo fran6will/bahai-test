@@ -20,7 +20,7 @@ export default function Home() {
             Une communauté ouverte au cœur de Montréal
           </h2>
           <p className="text-lg md:text-xl text-white leading-relaxed max-w-4xl mx-auto">
-            Aux côtés de nos ami·e·s et voisin·e·s, les bahá'í·e·s de Montréal s'efforcent de bâtir des communautés dynamiques. Nous cherchons à renforcer notre capacité à servir autrui et à créer des amitiés profondes, basées sur l'entraide et la collaboration.
+            Aux côtés de nos ami·e·s et voisin·e·s, les bahá&apos;í·e·s de Montréal s&apos;efforcent de bâtir des communautés dynamiques. Nous cherchons à renforcer notre capacité à servir autrui et à créer des amitiés profondes, basées sur l&apos;entraide et la collaboration.
           </p>
         </div>
       </section>
@@ -36,7 +36,7 @@ export default function Home() {
       <Section id="activites" backgroundColor="#F5F0E1">
         <h1 className="text-4xl font-bold mb-8 text-center">Activités</h1>
         <p className="text-lg mb-12 text-center max-w-4xl mx-auto">
-          Ayant à coeur l'établissement de l'unité entre tous les êtres vivants, la communauté bahá'íe participe activement à diverses initiatives.
+          Ayant à coeur l&apos;établissement de l&apos;unité entre tous les êtres vivants, la communauté bahá&apos;íe participe activement à diverses initiatives.
         </p>
 
         <div className="space-y-12">
@@ -95,11 +95,11 @@ export default function Home() {
         <div className="pt-20">
           <div className="p-8 md:p-12 max-w-4xl mx-auto" style={{ backgroundColor: '#FCFBF8' }}>
             <p className="text-lg mb-6">
-              Pour les bahá'í·e·s, Dieu est la source créatrice de toute existence. Cette Réalité divine, imperceptible et invisible, dépasse notre intelligence et notre compréhension : Elle contient tout et donc, ne peut être contenue. Cette vision admet que nos conceptions du divin sont forcément limitées par notre expérience terrestre. Les qualités que nous attribuons à Dieu servent à Lui dénier toutes imperfections humaines, mais elles ne reflètent pas la nature véritable de cette Réalité universelle, impossible à saisir.
+              Pour les bahá&apos;í·e·s, Dieu est la source créatrice de toute existence. Cette Réalité divine, imperceptible et invisible, dépasse notre intelligence et notre compréhension : Elle contient tout et donc, ne peut être contenue. Cette vision admet que nos conceptions du divin sont forcément limitées par notre expérience terrestre. Les qualités que nous attribuons à Dieu servent à Lui dénier toutes imperfections humaines, mais elles ne reflètent pas la nature véritable de cette Réalité universelle, impossible à saisir.
             </p>
 
             <p className="text-lg mb-12">
-              Cette conception transcendante du divin explique pourquoi les différentes traditions ont développé des appellations et des compréhensions variées de cette même réalité divine : Dieu, Allah, Yahvé, le Tao, le Manitou, le Père céleste, etc. Dans cette perspective, les différentes religions ne sont pas des constructions contradictoires, mais plutôt des réponses adaptées aux besoins spécifiques des sociétés qui les ont reçues. Abraham, Krishna, Zoroastre, Moïse, Bouddha, Jésus, Mahomet, et plus récemment Bahá'u'lláh, le fondateur de la foi baha'ie, sont considérés, pour ne nommer que ceux-là, comme des messagers d'une même Source divine, chacun apportant les enseignements spirituels adaptés à son époque et à son contexte. Chacune de ces révélations enrichit la précédente et délivre un message identique dans son essence. Ainsi, les baha'i·e·s croient qu'il n'existe au fond qu'une seule foi et que les révélations religieuses successives posent l'une après l'autre les fondements spirituels pour le progrès constant de la civilisation.
+              Cette conception transcendante du divin explique pourquoi les différentes traditions ont développé des appellations et des compréhensions variées de cette même réalité divine : Dieu, Allah, Yahvé, le Tao, le Manitou, le Père céleste, etc. Dans cette perspective, les différentes religions ne sont pas des constructions contradictoires, mais plutôt des réponses adaptées aux besoins spécifiques des sociétés qui les ont reçues. Abraham, Krishna, Zoroastre, Moïse, Bouddha, Jésus, Mahomet, et plus récemment Bahá&apos;u&apos;lláh, le fondateur de la foi baha&apos;ie, sont considérés, pour ne nommer que ceux-là, comme des messagers d&apos;une même Source divine, chacun apportant les enseignements spirituels adaptés à son époque et à son contexte. Chacune de ces révélations enrichit la précédente et délivre un message identique dans son essence. Ainsi, les baha&apos;i·e·s croient qu&apos;il n&apos;existe au fond qu&apos;une seule foi et que les révélations religieuses successives posent l&apos;une après l&apos;autre les fondements spirituels pour le progrès constant de la civilisation.
             </p>
           </div>
         </div>

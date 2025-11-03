@@ -25,10 +25,10 @@ export default function QuoteSection() {
             }}
           >
             <blockquote className="text-xl md:text-2xl leading-relaxed text-gray-800 mb-6">
-              "Vous êtes les fruits d'un même arbre, les feuilles d'une même branche. Que vos relations avec vos semblables soient toujours empreintes d'amour et d'harmonie, d'amitié et de camaraderie."
+              &quot;Vous êtes les fruits d&apos;un même arbre, les feuilles d&apos;une même branche. Que vos relations avec vos semblables soient toujours empreintes d&apos;amour et d&apos;harmonie, d&apos;amitié et de camaraderie.&quot;
             </blockquote>
             <cite className="text-lg font-semibold text-gray-900">
-              —Bahá'u'lláh
+              —Bahá&apos;u&apos;lláh
             </cite>
           </motion.div>
 
