@@ -32,7 +32,7 @@ export default function Menu() {
         <div className="flex justify-between items-center h-20">
           {/* Logo à gauche */}
           <div className="flex items-center space-x-3">
-            <Image src="/star.svg" alt="Bahai Star" width={32} height={32} />
+            <Image src="/Star.svg" alt="Bahai Star" width={32} height={32} />
             <div className="flex flex-col">
               <span className="text-gray-900 font-bold text-base leading-tight">
                 Communauté bahá&apos;í
