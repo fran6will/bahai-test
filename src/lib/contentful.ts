@@ -12,10 +12,13 @@ export interface NewsItem {
 const space = process.env.CONTENTFUL_SPACE_ID || '';
 const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN || '';
 
-const client = createClient({
-    space,
-    accessToken,
-});
+const client = (space && accessToken)
+    ? createClient({ space, accessToken })
+    : null;
+
+if (!client) {
+    console.warn('[Contentful] Client not initialized. Missing SPACE_ID or ACCESS_TOKEN.');
+}
 
 export async function getNews(locale: string = 'fr'): Promise<NewsItem[]> {
     // Map 'en' to 'en-US' as configured in Contentful
@@ -23,6 +26,8 @@ export async function getNews(locale: string = 'fr'): Promise<NewsItem[]> {
     const fallbackLocale = 'en-US';
 
     try {
+        if (!client) return [];
+
         // Use withAllLocales to fetch all languages (Omni-fetch) as suggested by SDK error
         // Casting to any to avoid TS issues if types aren't updated for withAllLocales
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -91,6 +96,8 @@ export async function getNewsItem(id: string, locale: string = 'fr'): Promise<Ne
     const fallbackLocale = 'en-US';
 
     try {
+        if (!client) return null;
+
         // Fetch specific entry by ID
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const item: any = await (client as any).withAllLocales.getEntry(id, {
