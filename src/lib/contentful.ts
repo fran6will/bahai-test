@@ -1,4 +1,4 @@
-import { createClient, Entry } from 'contentful';
+import { createClient } from 'contentful';
 
 export interface NewsItem {
     id: string;
@@ -25,14 +25,17 @@ export async function getNews(locale: string = 'fr'): Promise<NewsItem[]> {
     try {
         // Use withAllLocales to fetch all languages (Omni-fetch) as suggested by SDK error
         // Casting to any to avoid TS issues if types aren't updated for withAllLocales
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const response = await (client as any).withAllLocales.getEntries({
             content_type: 'activity',
             order: ['-fields.date'],
             include: 10,
         });
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return response.items.map((item: any) => {
             // Helper to extract value: Try Target Locale -> Try Fallback -> Try First Available
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const getField = (field: any) => {
                 if (!field) return undefined;
                 return field[targetLocale] || field[fallbackLocale] || Object.values(field)[0];
@@ -75,6 +78,7 @@ export async function getNews(locale: string = 'fr'): Promise<NewsItem[]> {
                 date: date || new Date().toISOString(),
             };
         });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         console.error('[Contentful] Error fetching news:', error);
         return [];
@@ -88,6 +92,7 @@ export async function getNewsItem(id: string, locale: string = 'fr'): Promise<Ne
 
     try {
         // Fetch specific entry by ID
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const item: any = await (client as any).withAllLocales.getEntry(id, {
             include: 10,
         });
@@ -95,6 +100,7 @@ export async function getNewsItem(id: string, locale: string = 'fr'): Promise<Ne
         if (!item) return null;
 
         // Helper to extract value (Same robust logic as above)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const getField = (field: any) => {
             if (!field) return undefined;
             return field[targetLocale] || field[fallbackLocale] || Object.values(field)[0];
@@ -132,6 +138,7 @@ export async function getNewsItem(id: string, locale: string = 'fr'): Promise<Ne
             imageAlt,
             date: date || new Date().toISOString(),
         };
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         console.error(`[Contentful] Error fetching news item ${id}:`, error);
         return null;

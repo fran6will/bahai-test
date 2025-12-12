@@ -1,10 +1,9 @@
 'use client';
 
-import Section from '@/components/Section';
 import Footer from '@/components/Footer';
-import QuoteSection from '@/components/QuoteSection';
 import { motion } from 'framer-motion';
 import { Compass, Atom, Scale, Sprout, HeartHandshake } from 'lucide-react';
+import Image from 'next/image';
 
 export default function VisionPage() {
     return (
@@ -31,9 +30,11 @@ export default function VisionPage() {
                         </div>
                         <div className="w-full lg:w-1/2 order-1 lg:order-2">
                             <div className="relative overflow-hidden rounded-xl shadow-xl">
-                                <img
+                                <Image
                                     src="/images/beliefs/transcendalwebp.webp"
                                     alt="Vision transcendante"
+                                    width={800}
+                                    height={600}
                                     className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
@@ -44,9 +45,11 @@ export default function VisionPage() {
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <div className="relative overflow-hidden rounded-xl shadow-xl">
-                                <img
+                                <Image
                                     src="/images/beliefs/croyances.webp"
                                     alt="Révélation progressive"
+                                    width={800}
+                                    height={600}
                                     className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
@@ -84,9 +87,11 @@ export default function VisionPage() {
                     <div className="flex flex-col lg:flex-row items-center relative gap-8 lg:gap-0">
                         {/* Image - Left Side - Larger */}
                         <div className="w-full lg:w-3/5 relative z-10">
-                            <img
+                            <Image
                                 src="/images/beliefs/unity_diversity.webp"
                                 alt="Unité dans la diversité"
+                                width={800}
+                                height={600}
                                 className="w-full h-auto shadow-xl rounded-lg"
                             />
                         </div>

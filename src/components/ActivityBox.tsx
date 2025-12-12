@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 interface ActivityBoxProps {
   title: string;
@@ -35,10 +36,11 @@ export default function ActivityBox({
       {/* Image Container with Hover Zoom */}
       <div className="relative h-64 md:h-72 overflow-hidden mb-6 rounded-sm">
         {imageSrc ? (
-          <img
+          <Image
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : null}
         {/* Subtle overlay on hover */}

@@ -2,6 +2,8 @@ import Section from '@/components/Section';
 import Footer from '@/components/Footer';
 import { getNewsItem } from '@/lib/contentful';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export const dynamic = 'force-dynamic';
 
@@ -24,10 +26,11 @@ export default async function NewsDetailPage({ params }: Props) {
                     {/* Hero Image */}
                     {newsItem.imageUrl && (
                         <div className="w-full h-80 md:h-[500px] relative overflow-hidden">
-                            <img
+                            <Image
                                 src={newsItem.imageUrl}
                                 alt={newsItem.imageAlt}
-                                className="w-full h-full object-cover"
+                                className="object-cover"
+                                fill
                             />
                         </div>
                     )}
@@ -35,9 +38,9 @@ export default async function NewsDetailPage({ params }: Props) {
                     <div className="p-8 md:p-12">
                         {/* Meta Data */}
                         <div className="text-gray-500 mb-6 font-serif uppercase tracking-wider text-sm flex items-center gap-4">
-                            <a href="/news" className="flex items-center hover:text-[#865B5B] transition-colors">
+                            <Link href="/news" className="flex items-center hover:text-[#865B5B] transition-colors">
                                 ← Retour aux nouvelles
-                            </a>
+                            </Link>
                             <span>•</span>
                             <span>
                                 {new Date(newsItem.date).toLocaleDateString('fr-CA', { year: 'numeric', month: 'long', day: 'numeric' })}

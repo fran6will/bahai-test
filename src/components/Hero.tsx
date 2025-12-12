@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 export default function Hero() {
@@ -22,10 +23,11 @@ export default function Hero() {
       className="relative h-[66vh] min-h-[500px] w-full grid grid-cols-2 overflow-hidden"
     >
       {/* Static Hero Image */}
-      <img
+      <Image
         src="/images/hero/slide-1.png"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="object-cover"
         alt="Hero background"
+        fill
       />
 
       {/* Dark Overlay */}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Section from '@/components/Section';
+import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export default function FAQPage() {
@@ -191,7 +192,7 @@ export default function FAQPage() {
                             <details className="group border-b border-gray-300 pb-4">
                                 <summary className="flex justify-between items-center cursor-pointer list-none">
                                     <span className="text-lg font-medium">
-                                        Vous avez d'autres questions ?
+                                        Vous avez d&apos;autres questions ?
                                     </span>
                                     <span className="text-2xl ml-4 flex-shrink-0">
                                         <span className="group-open:hidden">⊕</span>
@@ -199,7 +200,7 @@ export default function FAQPage() {
                                     </span>
                                 </summary>
                                 <div className="mt-4 text-gray-700 leading-relaxed">
-                                    N’hésitez pas à consulter les ressources ci-haut ou à nous contacter <a href="/contact" className="text-[#865B5B] hover:underline">ici</a>.
+                                    N’hésitez pas à consulter les ressources ci-haut ou à nous contacter <Link href="/contact" className="text-[#865B5B] hover:underline">ici</Link>.
                                 </div>
                             </details>
                         </div>

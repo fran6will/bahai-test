@@ -1,12 +1,19 @@
 'use client';
 
-import Section from '@/components/Section';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+interface Activity {
+    title: string;
+    description: string;
+    image: string;
+}
 
 // Separate component for individual interaction state
-function ActivityCard({ activity, index }: { activity: any, index: number }) {
+function ActivityCard({ activity, index }: { activity: Activity, index: number }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -19,10 +26,12 @@ function ActivityCard({ activity, index }: { activity: any, index: number }) {
             onClick={() => setIsOpen(!isOpen)}
         >
             <div className="relative h-64 md:h-80 overflow-hidden rounded-2xl shadow-lg mb-6">
-                <img
+                <Image
                     src={activity.image}
                     alt={activity.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${isOpen ? 'opacity-40' : 'group-hover:opacity-30'}`}></div>
 
@@ -106,9 +115,11 @@ export default function ChampsActionPage() {
                     <div className="flex flex-col lg:flex-row items-center relative gap-8 lg:gap-0">
                         {/* Image - Left Side */}
                         <div className="w-full lg:w-3/5 relative z-10">
-                            <img
+                            <Image
                                 src="/images/beliefs/Effendi_Quote.webp"
                                 alt="Shoghi Effendi Quote"
+                                width={800}
+                                height={600}
                                 className="w-full h-auto shadow-xl rounded-lg"
                             />
                         </div>
@@ -125,7 +136,7 @@ export default function ChampsActionPage() {
                                 style={{ backgroundColor: '#F5F0E1' }}
                             >
                                 <p className="font-serif text-lg md:text-xl leading-relaxed italic text-gray-800 mb-6 relative z-10">
-                                    "Nous ne pouvons pas séparer le cœur humain de l’environnement qui lui est extérieur et dire qu’une fois que l’un ou l’autre aura changé, chaque chose sera améliorée. L’homme fait partie du monde. Sa vie intérieure façonne l’environnement et est elle-même profondément influencée par lui. L’un agit sur l’autre et chaque changement durable dans la vie de l’homme est le résultat de cette interaction."
+                                    &quot;Nous ne pouvons pas séparer le cœur humain de l’environnement qui lui est extérieur et dire qu’une fois que l’un ou l’autre aura changé, chaque chose sera améliorée. L’homme fait partie du monde. Sa vie intérieure façonne l’environnement et est elle-même profondément influencée par lui. L’un agit sur l’autre et chaque changement durable dans la vie de l’homme est le résultat de cette interaction.&quot;
                                 </p>
                                 <p className="text-gray-600 text-sm font-serif relative z-10">— Shoghi Effendi</p>
                             </div>
@@ -150,9 +161,11 @@ export default function ChampsActionPage() {
 
                     {/* Image Side */}
                     <div className="relative rounded-lg overflow-hidden shadow-2xl order-1 lg:order-2">
-                        <img
+                        <Image
                             src="/images/action/action.webp"
                             alt="Action sociale et communautaire"
+                            width={800}
+                            height={600}
                             className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                         />
                     </div>
@@ -176,7 +189,7 @@ export default function ChampsActionPage() {
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
                         Vous souhaitez participer à l’une de ces activités?
                     </h2>
-                    <a
+                    <Link
                         href="/contact"
                         className="inline-block font-bold py-4 px-10 text-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 rounded-full"
                         style={{
@@ -185,7 +198,7 @@ export default function ChampsActionPage() {
                         }}
                     >
                         Contactez-nous!
-                    </a>
+                    </Link>
                 </div>
             </section>
             <Footer />

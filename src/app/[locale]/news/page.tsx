@@ -1,5 +1,6 @@
 
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { getNews } from '@/lib/contentful';
 
 export const dynamic = 'force-dynamic';
@@ -40,10 +41,11 @@ export default async function NewsPage({ params }: Props) {
                                 >
                                     {item.imageUrl && (
                                         <div className="h-64 w-full relative overflow-hidden">
-                                            <img
+                                            <Image
                                                 src={item.imageUrl}
                                                 alt={item.imageAlt}
-                                                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                                fill
+                                                className="object-cover transition-transform duration-500 hover:scale-105"
                                             />
                                         </div>
                                     )}

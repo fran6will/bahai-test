@@ -1,8 +1,7 @@
 'use client';
 
-import Section from '@/components/Section';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function SanctuaryPage() {
     return (
@@ -38,10 +37,11 @@ export default function SanctuaryPage() {
                         <div className="relative order-1 md:order-2 flex justify-center">
                             <div className="relative w-72 md:w-80 aspect-[3/4]">
                                 <div className="absolute inset-0 border-2 border-[#9C4436]/20 rounded-full transform translate-x-4 translate-y-4"></div>
-                                <img
+                                <Image
                                     src="/images/sanctuary/AbdulBaha.webp"
                                     alt="Portrait de 'Abdu'l-Bahá"
-                                    className="relative w-full h-full object-cover rounded-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                                    fill
+                                    className="object-cover rounded-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
                                 />
                             </div>
                         </div>
@@ -65,10 +65,11 @@ export default function SanctuaryPage() {
                     {/* Section 3: Visit Info with overlapping style */}
                     <div className="grid md:grid-cols-12 gap-8 items-center">
                         <div className="md:col-span-7 relative h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
-                            <img
+                            <Image
                                 src="/images/sanctuary/sanctuary.webp"
                                 alt="Sanctuaire intérieur"
-                                className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-1000"
+                                fill
+                                className="object-cover transform scale-100 group-hover:scale-110 transition-transform duration-1000"
                             />
                             <div className="absolute inset-0 bg-[#9C4436]/10 group-hover:bg-transparent transition-colors duration-500"></div>
                         </div>

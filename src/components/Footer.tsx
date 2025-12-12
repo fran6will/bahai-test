@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { MapPin, Mail, Phone, Clock, ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
     const t = useTranslations('HomePageContent');
@@ -27,7 +29,7 @@ export default function Footer() {
                                     { link: "https://news.bahai.org", label: t('footerWorldActivitiesNews') }
                                 ].map((item, idx) => (
                                     <li key={idx}>
-                                        <a
+                                        <Link
                                             href={item.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -37,7 +39,7 @@ export default function Footer() {
                                                 {item.label}
                                             </span>
                                             <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0" />
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -85,9 +87,9 @@ export default function Footer() {
                                 </div>
                             </div>
 
-                            <a href="/faq#contact" className="inline-flex items-center justify-center px-6 py-3 border border-white/20 hover:bg-white/10 hover:border-white/40 rounded-lg transition-all duration-300 text-sm tracking-widest uppercase font-medium">
+                            <Link href="/faq#contact" className="inline-flex items-center justify-center px-6 py-3 border border-white/20 hover:bg-white/10 hover:border-white/40 rounded-lg transition-all duration-300 text-sm tracking-widest uppercase font-medium">
                                 Nous contacter
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Col 3: Sanctuary */}
@@ -128,9 +130,9 @@ export default function Footer() {
                                 </div>
                             </div>
 
-                            <a href="/sanctuary" className="inline-flex items-center justify-center px-6 py-3 bg-[#B18888] hover:bg-[#9A7272] text-white rounded-lg transition-all duration-300 text-sm tracking-widest uppercase font-bold shadow-lg shadow-[#B18888]/20 hover:shadow-[#B18888]/40 hover:-translate-y-0.5">
+                            <Link href="/sanctuary" className="inline-flex items-center justify-center px-6 py-3 bg-[#B18888] hover:bg-[#9A7272] text-white rounded-lg transition-all duration-300 text-sm tracking-widest uppercase font-bold shadow-lg shadow-[#B18888]/20 hover:shadow-[#B18888]/40 hover:-translate-y-0.5">
                                 {t('footerSanctuaryVisitButton')}
-                            </a>
+                            </Link>
                         </div>
 
                     </div>
@@ -143,7 +145,7 @@ export default function Footer() {
 
                     {/* Brand */}
                     <div className="flex items-center gap-4 opacity-80 hover:opacity-100 transition-opacity">
-                        <img src="/Star.svg" alt="Bahá'í Star" className="w-10 h-10 brightness-0 invert" />
+                        <Image src="/Star.svg" alt="Bahá'í Star" width={40} height={40} className="w-10 h-10 brightness-0 invert" />
                         <div className="flex flex-col text-[#F5F0E1]">
                             <span className="font-serif font-bold text-lg leading-none tracking-tight">
                                 {t('footerCommunityName')}

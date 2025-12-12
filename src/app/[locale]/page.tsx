@@ -8,10 +8,12 @@ import QuoteSection from '@/components/QuoteSection';
 import ActivityBox from '@/components/ActivityBox';
 import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const t = useTranslations('HomePageContent');
-  const tHero = useTranslations('Hero');
+
 
   return (
     <main className="w-full">
@@ -79,7 +81,7 @@ export default function Home() {
         </div>
 
         <div className="mt-16 text-center">
-          <a
+          <Link
             href="/champs-action"
             className="inline-block font-bold py-4 px-8 text-lg md:text-xl transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer rounded-lg"
             style={{
@@ -88,7 +90,7 @@ export default function Home() {
             }}
           >
             {t('activitiesButton')}
-          </a>
+          </Link>
         </div>
       </Section>
 
@@ -108,7 +110,7 @@ export default function Home() {
             {t('unityDiversityDescription2')}
           </p>
           <div className="mt-8">
-            <a
+            <Link
               href="/vision"
               className="inline-block font-bold py-3 px-6 text-lg transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer rounded-lg"
               style={{
@@ -117,7 +119,7 @@ export default function Home() {
               }}
             >
               {t('unityDiversityButton')}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -153,10 +155,11 @@ export default function Home() {
       {/* Transition Section */}
       <section className="w-full relative">
         <div className="relative w-full aspect-video"> {/* Using aspect-video for fixed aspect ratio */}
-          <img
+          <Image
             src="/images/unity.webp"
             alt="Communauté bahá'íe de Montréal"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="object-cover"
+            fill
           />
           <div className="absolute inset-0 bg-black/20"></div> {/* Overlay for dark effect */}
         </div>
@@ -167,11 +170,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#F9F7F1]/90"></div>
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Image landscape */}
-          <div className="w-full md:w-1/2">
-            <img
+          <div className="w-full md:w-1/2 relative h-64 md:h-80">
+            <Image
               src="/images/sanctuary/sanctuary.webp"
               alt="Sanctuaire bahá'í de Montréal"
-              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-md"
+              className="rounded-lg shadow-md object-cover"
+              fill
             />
           </div>
 
@@ -181,7 +185,7 @@ export default function Home() {
             <p className="text-lg mb-8 leading-relaxed font-serif">
               {t('sanctuaryDescription')}
             </p>
-            <a
+            <Link
               href="/sanctuary"
               className="inline-block font-bold py-3 px-8 text-lg transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer rounded-lg"
               style={{
@@ -190,7 +194,7 @@ export default function Home() {
               }}
             >
               {t('sanctuaryButton')}
-            </a>
+            </Link>
           </div>
         </div>
       </section>
