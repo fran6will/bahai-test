@@ -4,65 +4,77 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 47.4% 11.2%;
+    /* Beige / Off-white Background */
+    --background: 40 20% 96%;
+    /* #F9F7F2 */
+    --foreground: 0 0% 20%;
+    /* #333333 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 20% 98%;
+    --card-foreground: 0 0% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 20% 98%;
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 205 90% 45%;
-    --primary-foreground: 210 40% 98%;
+    /* Turquoise Primary */
+    --primary: 173 58% 39%;
+    /* #2A9D8F */
+    --primary-foreground: 40 20% 96%;
 
-    --secondary: 45 90% 55%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Terracotta Secondary */
+    --secondary: 14 77% 61%;
+    /* #E76F51 */
+    --secondary-foreground: 40 20% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 217.2 32.6% 17.5%;
+    --muted: 40 10% 90%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 40% 90%;
+    --accent-foreground: 0 0% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 20% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 205 90% 45%;
+    --border: 40 10% 85%;
+    --input: 40 10% 85%;
+    --ring: 173 58% 39%;
 
     --radius: 0.5rem;
+
+    /* Font variables mapping */
+    --font-sans: var(--font-martel);
+    --font-serif: var(--font-martel);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode adjustments if needed, keeping it warm/dark */
+    --background: 20 10% 10%;
+    --foreground: 40 20% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 20 10% 12%;
+    --card-foreground: 40 20% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20 10% 12%;
+    --popover-foreground: 40 20% 96%;
 
-    --primary: 205 90% 55%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 173 58% 45%;
+    --primary-foreground: 20 10% 10%;
 
-    --secondary: 45 90% 45%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 14 77% 65%;
+    --secondary-foreground: 20 10% 10%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 210 40% 98%;
+    --muted: 20 10% 15%;
+    --muted-foreground: 40 10% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 20 10% 15%;
+    --accent-foreground: 40 20% 96%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 20% 96%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 205 90% 55%;
+    --border: 20 10% 20%;
+    --input: 20 10% 20%;
+    --ring: 173 58% 45%;
   }
 }
 
@@ -70,13 +82,20 @@
   * {
     border-color: hsl(var(--border));
   }
+
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: var(--font-martel), var(--font-geist-sans), serif;
+    font-family: var(--font-sans), sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-martel), var(--font-geist-mono), serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif), serif;
   }
 }
 

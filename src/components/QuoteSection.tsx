@@ -1,71 +1,95 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useState, useEffect } from 'react';
+
+import { useTranslations } from 'next-intl';
+
+const images = [
+  '/images/carrousel/01.webp',
+  '/images/carrousel/02.webp',
+  '/images/carrousel/03.webp'
+];
 
 export default function QuoteSection() {
+  const t = useTranslations('Hero');
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section ref={ref} className="relative py-20 overflow-visible" style={{ backgroundColor: '#E0DACC' }}>
-      <div className="w-full px-4 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
-          {/* Citation à gauche */}
+    <section ref={ref} className="relative py-20 md:py-28 overflow-visible" style={{ backgroundColor: '#E0DACC' }}>
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+          {/* Text Box (Floating on left) */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
             transition={{ duration: 0.8 }}
-            className="bg-white p-8 md:p-12 order-1 lg:order-1"
-            style={{
-              boxShadow: '0 1px 1px rgba(0,0,0,.03), 0 8px 24px rgba(0,0,0,.06)',
-              borderRadius: '8px'
-            }}
+            className="lg:col-span-5 lg:col-start-1 relative z-20 order-2 lg:order-1"
           >
-            <blockquote className="text-xl md:text-2xl leading-relaxed text-gray-800 mb-6">
-              &quot;Vous êtes les fruits d&apos;un même arbre, les feuilles d&apos;une même branche. Que vos relations avec vos semblables soient toujours empreintes d&apos;amour et d&apos;harmonie, d&apos;amitié et de camaraderie.&quot;
-            </blockquote>
-            <cite className="text-lg font-semibold text-gray-900">
-              —Bahá&apos;u&apos;lláh
-            </cite>
+            <div
+              className="p-10 md:p-14 shadow-lg relative"
+              style={{ borderRadius: '4px', backgroundColor: '#F5F1E8' }}
+            >
+              <p className="text-base md:text-lg leading-relaxed text-gray-700 font-serif">
+                {t('welcomeDescription')}
+              </p>
+            </div>
           </motion.div>
 
-          {/* Image à droite avec carré overlay */}
+          {/* Image Area (Right, with decorative square) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative z-20 order-2 lg:order-2 mt-8 lg:mt-0"
+            className="lg:col-span-6 lg:col-start-7 relative order-1 lg:order-2 -mb-24 md:-mb-48"
           >
-            {/* Image de fond */}
-            <div className="w-full h-96 md:h-[500px] relative overflow-visible">
-              <img
-                src="/images/quote/quote.jpg"
-                alt="Quote"
-                className="w-full h-full object-cover"
-                style={{
-                  aspectRatio: '9/16' // Force le format portrait 9:16 (rectangle long vertical)
-                }}
-              />
-              {/* Carré artistique beige pâle */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute z-10"
-                style={{
-                  backgroundColor: '#F5F1E8', // Beige pâle
-                  left: '45%',
-                  top: '-30%',
-                  width: '200px',
-                  height: '200px',
-                  transform: 'rotate(12deg)' // Forme artistique avec rotation
-                }}
-              ></motion.div>
+            {/* Decorative Square (top-right of image) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="absolute -top-6 -right-6 w-20 h-20 md:w-24 md:h-24 z-30 shadow-sm hidden md:block"
+              style={{ backgroundColor: '#F5F1E8' }}
+            />
+
+            {/* Slider Container */}
+            <div className="relative overflow-hidden shadow-2xl bg-gray-200" style={{ aspectRatio: '4/3' }}>
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.img
+                  key={currentIndex}
+                  src={images[currentIndex]}
+                  alt="Communauté"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }} // Slow, minimalist fade
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
             </div>
+
+            {/* Decorative border behind image */}
+            <div
+              className="absolute -bottom-4 -left-4 w-full h-full -z-10 hidden lg:block"
+              style={{ border: '1px solid rgba(141, 163, 153, 0.3)' }}
+            />
           </motion.div>
+
         </div>
       </div>
     </section>

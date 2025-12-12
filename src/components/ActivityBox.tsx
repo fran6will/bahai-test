@@ -18,7 +18,6 @@ export default function ActivityBox({
   imageSrc,
   imageAlt,
   delay = 0,
-  reverse = false
 }: ActivityBoxProps) {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -28,42 +27,36 @@ export default function ActivityBox({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
-      transition={{ duration: 0.8, delay }}
-      className={`flex flex-col md:flex-row gap-8 w-full max-w-6xl mx-auto bg-white ${reverse ? 'md:flex-row-reverse' : ''}`}
-      style={{
-        boxShadow: '0 1px 1px rgba(0,0,0,.03), 0 8px 24px rgba(0,0,0,.06)',
-        borderRadius: '8px',
-        overflow: 'hidden'
-      }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }}
+      transition={{ duration: 0.6, delay }}
+      className="group"
     >
-      {/* Image avec titre - 60% */}
-      <div className="relative w-full md:w-3/5 md:flex-shrink-0 flex flex-col">
-        <div className="relative flex-1 min-h-[300px]">
+      {/* Image Container with Hover Zoom */}
+      <div className="relative h-64 md:h-72 overflow-hidden mb-6 rounded-sm">
+        {imageSrc ? (
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          {/* Rectangle pour le titre en bas */}
-          <div
-            className="absolute bottom-0 left-0 right-0 p-6"
-            style={{ backgroundColor: 'rgba(134, 91, 91, 0.9)' }}
-          >
-            <h3 className="text-white text-xl font-bold leading-tight">
-              {title}
-            </h3>
-          </div>
-        </div>
+        ) : null}
+        {/* Subtle overlay on hover */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
       </div>
 
-      {/* Description - 40% */}
-      <div className="p-6 w-full md:w-2/5 flex items-center">
-        <p className="text-gray-700 leading-relaxed text-lg">
-          {description}
-        </p>
-      </div>
+      {/* Title */}
+      <h4 className="font-serif text-xl md:text-2xl mb-3 text-gray-900 group-hover:text-[#865B5B] transition-colors duration-300">
+        {title}
+      </h4>
+
+      {/* Description */}
+      <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-4 font-serif">
+        {description}
+      </p>
+
+      {/* Animated underline */}
+      <div className="w-8 h-px bg-[#865B5B] group-hover:w-full transition-all duration-500" />
     </motion.div>
   );
 }

@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Martel } from "next/font/google";
+import { Martel } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Menu from "@/components/Menu";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const martel = Martel({
   variable: "--font-martel",
@@ -31,14 +21,14 @@ export default async function LocaleLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
+  const { locale } = await params;
   const messages = await getMessages();
 
   return (
-    <html lang={locale} style={{scrollBehavior: 'smooth'}}>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${martel.variable} antialiased bg-blue-50 text-gray-900`}>
+    <html lang={locale} style={{ scrollBehavior: 'smooth' }} suppressHydrationWarning>
+      <body className={`${martel.variable} antialiased bg-[#F9F7F2] text-[#333333] font-serif`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Menu />
           {children}
