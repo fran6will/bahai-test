@@ -2,6 +2,14 @@
   "HomePage": {
     "title": "Bonjour, le monde!"
   },
+  "Menu": {
+    "home": "Accueil",
+    "vision": "Vision",
+    "action": "Champs d'action",
+    "news": "Nouvelles",
+    "sanctuary": "Sanctuaire",
+    "faq": "En savoir plus"
+  },
   "Hero": {
     "welcomeTitle": "Bienvenue sur le site de la communauté bahá'íe de Montréal",
     "welcomeDescription": "Nous nous inspirons des enseignements de la foi bahá'íe, dont le but fondamental est de promouvoir l'unité de l'humanité et de cultiver un esprit d'amour et de fraternité universelle.",

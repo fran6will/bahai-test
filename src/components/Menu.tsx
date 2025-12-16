@@ -3,25 +3,26 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { Link } from '../navigation';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '../navigation';
 import { useState, useTransition } from 'react';
 
-const menuItems = [
-  { name: 'Accueil', href: '/' },
-  { name: 'Vision', href: '/vision' },
-  { name: 'Champs d\'action', href: '/champs-action' },
-  { name: 'Nouvelles', href: '/news' },
-  { name: 'Sanctuaire', href: '/sanctuary' },
-  { name: 'En savoir plus', href: '/faq' },
-];
-
 export default function Menu() {
+  const t = useTranslations('Menu');
   const [isOpen, setIsOpen] = useState(false);
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
+
+  const menuItems = [
+    { name: t('home'), href: '/' },
+    { name: t('vision'), href: '/vision' },
+    { name: t('action'), href: '/champs-action' },
+    { name: t('news'), href: '/news' },
+    { name: t('sanctuary'), href: '/sanctuary' },
+    { name: t('faq'), href: '/faq' },
+  ];
 
   const toggleLanguage = () => {
     const nextLocale = locale === 'fr' ? 'en' : 'fr';

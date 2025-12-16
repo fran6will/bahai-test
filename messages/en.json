@@ -2,6 +2,14 @@
   "HomePage": {
     "title": "Hello, World!"
   },
+  "Menu": {
+    "home": "Home",
+    "vision": "Vision",
+    "action": "Fields of Action",
+    "news": "News",
+    "sanctuary": "Sanctuary",
+    "faq": "Learn More"
+  },
   "Hero": {
     "welcomeTitle": "Welcome to the Bahá'í Community of Montreal website",
     "welcomeDescription": "We are inspired by the teachings of the Bahá'í Faith, whose fundamental purpose is to promote the unity of humanity and cultivate a spirit of love and universal brotherhood.",
