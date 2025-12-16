@@ -160,14 +160,19 @@ export default function ChampsActionPage() {
                     </div>
 
                     {/* Image Side */}
-                    <div className="relative rounded-lg overflow-hidden shadow-2xl order-1 lg:order-2">
-                        <Image
-                            src="/images/action/action.webp"
-                            alt="Action sociale et communautaire"
-                            width={800}
-                            height={600}
-                            className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-                        />
+                    <div className="order-1 lg:order-2">
+                        <div className="relative rounded-lg overflow-hidden shadow-2xl mb-3">
+                            <Image
+                                src="/images/action/action.webp"
+                                alt="Action sociale et communautaire"
+                                width={800}
+                                height={600}
+                                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <p className="text-sm text-gray-600 italic text-center font-serif">
+                            Les délégué.e.s de la communauté baha’ie pour la 69e commission sur le statut de la femme à l’ONU
+                        </p>
                     </div>
                 </div>
             </section>

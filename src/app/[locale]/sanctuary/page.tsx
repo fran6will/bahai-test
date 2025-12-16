@@ -16,12 +16,12 @@ export default function SanctuaryPage() {
                 </div>
             </section>
 
-            <div className="w-full py-12 px-6 md:px-12 pb-24" style={{ backgroundColor: '#F9F7F2' }}>
+            <div className="w-full py-8 px-6 md:px-12 pb-12" style={{ backgroundColor: '#F9F7F2' }}>
                 <div className="max-w-7xl mx-auto">
 
 
                     {/* Section 1: History & Portrait */}
-                    <div className="mt-24 grid md:grid-cols-2 gap-16 items-center">
+                    <div className="mt-12 grid md:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8 order-2 md:order-1">
                             <h2 className="text-3xl md:text-4xl font-bold text-[#9C4436] font-serif">Une demeure historique</h2>
                             <div className="space-y-6 text-lg text-gray-700 leading-relaxed font-sans">

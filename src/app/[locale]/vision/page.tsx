@@ -31,7 +31,7 @@ export default function VisionPage() {
                         <div className="w-full lg:w-1/2 order-1 lg:order-2">
                             <div className="relative overflow-hidden rounded-xl shadow-xl">
                                 <Image
-                                    src="/images/beliefs/transcendalwebp.webp"
+                                    src="/images/beliefs/unity_diversity.webp"
                                     alt="Vision transcendante"
                                     width={800}
                                     height={600}
@@ -41,41 +41,27 @@ export default function VisionPage() {
                         </div>
                     </div>
 
-                    {/* Block 2: Révélation progressive (Image Left, Text Right) */}
-                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-                        <div className="w-full lg:w-1/2">
-                            <div className="relative overflow-hidden rounded-xl shadow-xl">
-                                <Image
-                                    src="/images/beliefs/croyances.webp"
-                                    alt="Révélation progressive"
-                                    width={800}
-                                    height={600}
-                                    className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-                                />
+                    <div className="w-full max-w-4xl mx-auto text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-8 font-serif text-[#333]">Une révélation progressive</h2>
+                        <p className="text-lg leading-relaxed font-serif text-gray-800 mb-8 text-left md:text-justify">
+                            Cette conception transcendante du divin explique pourquoi les différentes traditions ont développé des appellations et des compréhensions variées de cette même réalité divine : Dieu, Allah, Yahvé, le Tao, le Manitou, le Père céleste, etc. Dans cette perspective, les différentes religions ne sont pas des constructions contradictoires, mais plutôt des réponses adaptées aux besoins spécifiques des sociétés qui les ont reçues.
+                        </p>
+
+                        {/* Visual Timeline / List */}
+                        <div className="mb-8">
+                            <p className="text-sm font-bold text-[#865B5B] uppercase tracking-wide mb-4 font-serif">Messagers divins à travers l&apos;histoire</p>
+                            <div className="flex flex-wrap justify-center gap-3">
+                                {["Abraham", "Krishna", "Zoroastre", "Moïse", "Bouddha", "Jésus", "Mahomet", "Le Báb", "Bahá'u'lláh"].map((name, i) => (
+                                    <span key={i} className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
+                                        {name}
+                                    </span>
+                                ))}
                             </div>
                         </div>
-                        <div className="w-full lg:w-1/2">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif text-[#333]">Une révélation progressive</h2>
-                            <p className="text-lg leading-relaxed font-serif text-gray-800 mb-8">
-                                Cette conception transcendante du divin explique pourquoi les différentes traditions ont développé des appellations et des compréhensions variées de cette même réalité divine : Dieu, Allah, Yahvé, le Tao, le Manitou, le Père céleste, etc. Dans cette perspective, les différentes religions ne sont pas des constructions contradictoires, mais plutôt des réponses adaptées aux besoins spécifiques des sociétés qui les ont reçues.
-                            </p>
 
-                            {/* Visual Timeline / List */}
-                            <div className="mb-8">
-                                <p className="text-sm font-bold text-[#865B5B] uppercase tracking-wide mb-4 font-serif">Messagers divins à travers l&apos;histoire</p>
-                                <div className="flex flex-wrap gap-3">
-                                    {["Abraham", "Krishna", "Zoroastre", "Moïse", "Bouddha", "Jésus", "Mahomet", "Bahá'u'lláh"].map((name, i) => (
-                                        <span key={i} className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
-                                            {name}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <p className="text-lg leading-relaxed font-serif text-gray-800">
-                                Chacune de ces révélations enrichit la précédente et délivre un message identique dans son essence. Ainsi, les baha&apos;i·e·s croient qu&apos;il n&apos;existe au fond qu&apos;une seule foi et que les révélations religieuses successives posent l&apos;une après l&apos;autre les fondements spirituels pour le progrès constant de la civilisation.
-                            </p>
-                        </div>
+                        <p className="text-lg leading-relaxed font-serif text-gray-800 text-left md:text-justify">
+                            Chacune de ces révélations enrichit la précédente et délivre un message identique dans son essence. Ainsi, les baha&apos;i·e·s croient qu&apos;il n&apos;existe au fond qu&apos;une seule foi et que les révélations religieuses successives posent l&apos;une après l&apos;autre les fondements spirituels pour le progrès constant de la civilisation.
+                        </p>
                     </div>
 
                 </div>
@@ -88,7 +74,7 @@ export default function VisionPage() {
                         {/* Image - Left Side - Larger */}
                         <div className="w-full lg:w-3/5 relative z-10">
                             <Image
-                                src="/images/beliefs/unity_diversity.webp"
+                                src="/images/footer/footer.webp"
                                 alt="Unité dans la diversité"
                                 width={800}
                                 height={600}
@@ -110,7 +96,7 @@ export default function VisionPage() {
                                 <p className="font-serif text-lg md:text-xl leading-relaxed italic text-gray-800 mb-6 relative z-10">
                                     Les différences au sein de la famille humaine devraient être la cause de l&apos;amour et de l&apos;harmonie, de même qu&apos;en musique l&apos;accord parfait résulte de la résonance simultanée d&apos;un grand nombre de notes différentes.
                                 </p>
-                                <p className="text-gray-600 text-sm font-serif relative z-10">— Abdu&apos;l-Bahá</p>
+                                <p className="text-gray-600 text-sm font-serif relative z-10">— Abdu&apos;l-Bahá, fils de Baha’u’llah</p>
                             </div>
                         </div>
                     </div>
