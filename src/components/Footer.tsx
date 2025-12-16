@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { MapPin, Mail, Phone, Clock, ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '../navigation';
 import Image from 'next/image';
 
 export default function Footer() {

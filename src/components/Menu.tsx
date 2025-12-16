@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '../navigation';
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '../navigation';
 import { useState, useTransition } from 'react';

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Section from '@/components/Section';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import Footer from '@/components/Footer';
 
 export default function FAQPage() {

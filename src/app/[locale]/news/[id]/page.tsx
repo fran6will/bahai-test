@@ -2,7 +2,7 @@ import Section from '@/components/Section';
 import Footer from '@/components/Footer';
 import { getNewsItem } from '@/lib/contentful';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import Image from 'next/image';
 
 export const dynamic = 'force-dynamic';

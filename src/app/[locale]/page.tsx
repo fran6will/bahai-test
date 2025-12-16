@@ -8,7 +8,7 @@ import QuoteSection from '@/components/QuoteSection';
 import ActivityBox from '@/components/ActivityBox';
 import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import Image from 'next/image';
 
 export default function Home() {
