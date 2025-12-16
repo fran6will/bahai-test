@@ -71,7 +71,7 @@ export async function getNews(locale: string = 'fr'): Promise<NewsItem[]> {
 
             // Check fallback if URL is still empty
             if (!imageUrl) {
-                imageUrl = '/images/activities/commmunity_spaces.webp';
+                imageUrl = '/images/activities/community_spaces.webp';
             }
 
             return {
@@ -134,7 +134,7 @@ export async function getNewsItem(id: string, locale: string = 'fr'): Promise<Ne
 
         // Fallback
         if (!imageUrl) {
-            imageUrl = '/images/activities/commmunity_spaces.webp';
+            imageUrl = '/images/activities/community_spaces.webp';
         }
 
         return {

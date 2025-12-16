@@ -50,7 +50,7 @@ export default function Home() {
           <ActivityBox
             title={t('activityBox1Title')}
             description={t('activityBox1Description')}
-            imageSrc="/images/activities/commmunity_spaces.webp"
+            imageSrc="/images/activities/community_spaces.webp"
             imageAlt="Espaces communautaires"
             delay={0}
           />
