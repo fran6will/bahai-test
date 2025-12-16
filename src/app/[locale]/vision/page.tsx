@@ -10,8 +10,11 @@ export default function VisionPage() {
         <main className="w-full pt-20">
             {/* Banner header with image */}
             <section
-                className="w-full py-24 md:py-32 flex items-center justify-center bg-cover bg-center relative"
-                style={{ backgroundImage: "url('/images/beliefs/vision_header.webp')" }}
+                className="w-full py-24 md:py-32 flex items-center justify-center bg-cover relative"
+                style={{
+                    backgroundImage: "url('/images/beliefs/unity_diversity.webp')",
+                    backgroundPosition: "50% 85%"
+                }}
             >
                 <div className="absolute inset-0 bg-black/10" />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#F5F0E1] font-serif relative z-10">Vision</h1>
@@ -21,24 +24,12 @@ export default function VisionPage() {
                 <div className="max-w-7xl mx-auto">
 
                     {/* Block 1: Dieu transcendant (Text Left, Image Right) */}
-                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-24">
-                        <div className="w-full lg:w-1/2 order-2 lg:order-1">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif text-[#333]">Une conception transcendante de « Dieu »</h2>
-                            <p className="text-lg leading-relaxed font-serif text-gray-800">
-                                Pour les bahá&apos;í·e·s, Dieu est la source créatrice de toute existence. Cette Réalité divine, imperceptible et invisible, dépasse notre intelligence et notre compréhension : Elle contient tout et donc, ne peut être contenue. Cette vision admet que nos conceptions du divin sont forcément limitées par notre expérience terrestre. Les qualités que nous attribuons à Dieu servent à Lui dénier toutes imperfections humaines, mais elles ne reflètent pas la nature véritable de cette Réalité universelle, impossible à saisir.
-                            </p>
-                        </div>
-                        <div className="w-full lg:w-1/2 order-1 lg:order-2">
-                            <div className="relative overflow-hidden rounded-xl shadow-xl">
-                                <Image
-                                    src="/images/beliefs/unity_diversity.webp"
-                                    alt="Vision transcendante"
-                                    width={800}
-                                    height={600}
-                                    className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-                                />
-                            </div>
-                        </div>
+                    {/* Block 1: Dieu transcendant (Centered Text) */}
+                    <div className="w-full max-w-4xl mx-auto text-center mb-24">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif text-[#333]">Une conception transcendante de Dieu</h2>
+                        <p className="text-lg leading-relaxed font-serif text-gray-800 text-left md:text-justify">
+                            Pour les bahá&apos;í·e·s, Dieu est la source créatrice de toute existence. Cette Réalité divine, imperceptible et invisible, dépasse notre intelligence et notre compréhension : Elle contient tout et donc, ne peut être contenue. Cette vision admet que nos conceptions du divin sont forcément limitées par notre expérience terrestre. Les qualités que nous attribuons à Dieu servent à Lui dénier toutes imperfections humaines, mais elles ne reflètent pas la nature véritable de cette Réalité universelle, impossible à saisir.
+                        </p>
                     </div>
 
                     <div className="w-full max-w-4xl mx-auto text-center">

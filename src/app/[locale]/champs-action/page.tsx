@@ -79,7 +79,7 @@ export default function ChampsActionPage() {
         {
             title: "Espaces communautaires pour se recueillir",
             description: "Dans différents foyers de Montréal, les bahá’í·e·s se réunissent avec ami·e·s et familles pour se recueillir, prier et méditer ensemble. Ces rencontres prennent différentes formes selon les participant·e·s et s’adaptent à la réalité de chaque groupe.",
-            image: "/images/activities/community_spaces.webp"
+            image: "/images/activities/social_02.webp"
         },
         {
             title: "Cercles de partages et de réflexions",

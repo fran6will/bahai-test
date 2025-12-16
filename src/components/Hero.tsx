@@ -28,6 +28,7 @@ export default function Hero() {
         className="object-cover"
         alt="Hero background"
         fill
+        priority
       />
 
       {/* Dark Overlay */}

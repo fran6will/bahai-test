@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 
 const images = [
   '/images/carrousel/01.webp',
+  '/images/hero/park_slide.webp',
   '/images/carrousel/02.webp',
   '/images/carrousel/03.webp'
 ];
