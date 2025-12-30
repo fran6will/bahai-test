@@ -40,15 +40,15 @@ export default function ActivityBox({
             src={imageSrc}
             alt={imageAlt}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            className="object-cover transition-transform duration-700"
           />
         ) : null}
         {/* Subtle overlay on hover */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-300" />
       </div>
 
       {/* Title */}
-      <h4 className="font-serif text-xl md:text-2xl mb-3 text-gray-900 group-hover:text-[#865B5B] transition-colors duration-300">
+      <h4 className="font-serif text-xl md:text-2xl mb-3 text-gray-900 transition-colors duration-300">
         {title}
       </h4>
 
@@ -58,7 +58,7 @@ export default function ActivityBox({
       </p>
 
       {/* Animated underline */}
-      <div className="w-8 h-px bg-[#865B5B] group-hover:w-full transition-all duration-500" />
+      <div className="w-8 h-px bg-[#865B5B] transition-all duration-500" />
     </motion.div>
   );
 }

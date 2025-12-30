@@ -11,7 +11,7 @@
     "faq": "Learn More"
   },
   "Hero": {
-    "welcomeTitle": "Welcome to the Bahá'í Community of Montreal website",
+    "welcomeTitle": "Uniting our differences to transform the world.",
     "welcomeDescription": "We are inspired by the teachings of the Bahá'í Faith, whose fundamental purpose is to promote the unity of humanity and cultivate a spirit of love and universal brotherhood.",
     "ctaButton": "Learn More"
   },
@@ -54,7 +54,7 @@
     "footerLibraryHoursTimeWed": "3 PM to 7 PM",
     "footerLibraryHoursThursday": "Thursday",
     "footerLibraryHoursTimeThu": "3 PM to 7 PM",
-    "footerLibraryHoursSaturday": "Saturdays",
+    "footerLibraryHoursSaturday": "Saturday",
     "footerLibraryHoursTimeSat": "11 AM to 3 PM",
     "footerSanctuaryTitle": "Bahá'í Sanctuary of Montreal",
     "footerSanctuaryAddress1": "1548, des Pins Ave W.",
@@ -62,9 +62,9 @@
     "footerSanctuaryEmail": "info@bahaimontreal.org",
     "footerSanctuaryPhone": "(514) 568-2104",
     "footerSanctuaryHoursTitle": "Visiting Hours:",
-    "footerSanctuaryHoursWednesday": "Wednesdays",
+    "footerSanctuaryHoursWednesday": "Wednesday",
     "footerSanctuaryHoursTimeWed": "7 PM to 9 PM",
-    "footerSanctuaryHoursSaturday": "Saturdays",
+    "footerSanctuaryHoursSaturday": "Saturday",
     "footerSanctuaryHoursTimeSat": "1 PM to 4 PM",
     "footerSanctuaryVisitButton": "Plan Your Visit >",
     "footerCommunityName": "Bahá'í Community",

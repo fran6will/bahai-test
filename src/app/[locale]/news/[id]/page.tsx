@@ -22,7 +22,7 @@ export default async function NewsDetailPage({ params }: Props) {
     return (
         <main className="w-full pt-20">
             <Section id="news-detail" backgroundColor="#F5F0E1">
-                <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+                <div className="max-w-4xl mx-auto shadow-xl rounded-lg overflow-hidden" style={{ backgroundColor: '#F9F7F2' }}>
                     {/* Hero Image */}
                     {newsItem.imageUrl && (
                         <div className="w-full h-80 md:h-[500px] relative overflow-hidden">

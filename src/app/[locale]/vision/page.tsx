@@ -2,7 +2,7 @@
 
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import { Compass, Atom, Scale, Sprout, HeartHandshake } from 'lucide-react';
+import { Compass, Atom, Scale, Sprout, HeartHandshake, Quote } from 'lucide-react';
 import Image from 'next/image';
 
 export default function VisionPage() {
@@ -40,7 +40,7 @@ export default function VisionPage() {
 
                         {/* Visual Timeline / List */}
                         <div className="mb-8">
-                            <p className="text-sm font-bold text-[#865B5B] uppercase tracking-wide mb-4 font-serif">Messagers divins à travers l&apos;histoire</p>
+                            <p className="text-sm font-bold text-[#865B5B] uppercase tracking-wide mb-4 font-serif">Quelques messagers divins à travers l&apos;histoire</p>
                             <div className="flex flex-wrap justify-center gap-3">
                                 {["Abraham", "Krishna", "Zoroastre", "Moïse", "Bouddha", "Jésus", "Mahomet", "Le Báb", "Bahá'u'lláh"].map((name, i) => (
                                     <span key={i} className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
@@ -75,11 +75,13 @@ export default function VisionPage() {
 
                         {/* Text block - Right Side - Overlapping */}
                         <div className="w-full lg:w-2/5 relative z-20 lg:-ml-24 mt-8 lg:mt-0">
-                            {/* Decorative square */}
+                            {/* Decorative square with quote icon */}
                             <div
-                                className="absolute -top-6 -right-6 w-16 h-16 z-10"
-                                style={{ backgroundColor: '#7DA09E' }}
-                            />
+                                className="absolute -top-10 -left-10 w-20 h-20 flex items-center justify-center shadow-md z-10"
+                                style={{ backgroundColor: '#7DA09E', borderRadius: '4px' }}
+                            >
+                                <Quote size={40} className="text-[#F5F0E1] fill-[#F5F0E1] opacity-50" />
+                            </div>
                             <div
                                 className="relative p-8 md:p-12 shadow-2xl rounded-lg"
                                 style={{ backgroundColor: '#F5F0E1' }}
@@ -125,7 +127,7 @@ export default function VisionPage() {
                             {
                                 icon: HeartHandshake,
                                 title: "Justice économique",
-                                text: "La justice économique vise l'abolition des extrêmes de richesse et de pauvreté, non par nivellement, mais par l'établissement de systèmes plus équitables. Le progrès spirituel et moral de la société dans son ensemble est également indispensable, puisque la transformation matérielle et l'élévation de la conscience humaine sont indissociables pour atteindre une véritable justice sociale.",
+                                text: "La justice économique vise l'abolition des extrêmes de richesse et de pauvreté, non par nivellement, mais par l'établissement de systèmes plus équitables. Le progrès spirituel et moral de la société dans son ensemble est également indispensable, puisque la transformation matérière et l'élévation de la conscience humaine sont indissociables pour atteindre une véritable justice sociale.",
                                 fullWidth: true
                             }
                         ].map((principle, index) => (

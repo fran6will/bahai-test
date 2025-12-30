@@ -33,8 +33,9 @@ export default async function NewsPage({ params }: Props) {
                             newsItems.map((item) => (
                                 <article
                                     key={item.id}
-                                    className="bg-white overflow-hidden flex flex-col h-full"
+                                    className="overflow-hidden flex flex-col h-full"
                                     style={{
+                                        backgroundColor: '#F9F7F2',
                                         boxShadow: '0 1px 1px rgba(0,0,0,.03), 0 8px 24px rgba(0,0,0,.06)',
                                         borderRadius: '8px'
                                     }}
@@ -74,8 +75,9 @@ export default async function NewsPage({ params }: Props) {
                             // Fallback content
                             <>
                                 <article
-                                    className="bg-white overflow-hidden"
+                                    className="overflow-hidden"
                                     style={{
+                                        backgroundColor: '#F9F7F2',
                                         boxShadow: '0 1px 1px rgba(0,0,0,.03), 0 8px 24px rgba(0,0,0,.06)',
                                         borderRadius: '8px'
                                     }}
@@ -97,8 +99,9 @@ export default async function NewsPage({ params }: Props) {
                                 </article>
 
                                 <article
-                                    className="bg-white overflow-hidden"
+                                    className="overflow-hidden"
                                     style={{
+                                        backgroundColor: '#F9F7F2',
                                         boxShadow: '0 1px 1px rgba(0,0,0,.03), 0 8px 24px rgba(0,0,0,.06)',
                                         borderRadius: '8px'
                                     }}

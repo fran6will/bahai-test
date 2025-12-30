@@ -53,9 +53,9 @@ export default function FAQPage() {
                 </div>
             </section>
 
-            <section className="w-full py-12 px-6 md:px-16 lg:px-32" style={{ backgroundColor: '#A5BEC3' }}>
+            <section className="w-full py-12 px-6 md:px-16 lg:px-32" style={{ backgroundColor: '#F2EADF' }}>
                 <div className="max-w-4xl mx-auto">
-                    <div className="p-8 md:p-12" style={{ backgroundColor: '#F5F0E1', borderRadius: '24px' }}>
+                    <div className="p-8 md:p-12 bg-white" style={{ borderRadius: '24px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
                         <h2 className="text-4xl font-bold mb-8 text-center">Questions fréquemment posées</h2>
 
                         <div className="space-y-4">
@@ -209,7 +209,7 @@ export default function FAQPage() {
             </section>
 
             {/* Contact Section moved from Contact Page */}
-            <Section id="contact" backgroundColor="#F5F0E1">
+            <Section id="contact" backgroundColor="#F2EADF">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-800">Contactez-nous</h2>
 

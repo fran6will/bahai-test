@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { Martel } from "next/font/google";
+import localFont from "next/font/local";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Menu from "@/components/Menu";
 
-const martel = Martel({
+const martel = localFont({
+  src: [
+    { path: "../../../public/fonts/martel/martel-latin-200.woff2", weight: "200" },
+    { path: "../../../public/fonts/martel/martel-latin-300.woff2", weight: "300" },
+    { path: "../../../public/fonts/martel/martel-latin-400.woff2", weight: "400" },
+    { path: "../../../public/fonts/martel/martel-latin-600.woff2", weight: "600" },
+    { path: "../../../public/fonts/martel/martel-latin-700.woff2", weight: "700" },
+    { path: "../../../public/fonts/martel/martel-latin-800.woff2", weight: "800" },
+    { path: "../../../public/fonts/martel/martel-latin-900.woff2", weight: "900" },
+  ],
   variable: "--font-martel",
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

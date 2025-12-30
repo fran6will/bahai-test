@@ -60,19 +60,13 @@ export default function Footer() {
                                 </div>
                                 <div className="flex gap-4">
                                     <Clock className="w-5 h-5 mt-1 shrink-0 text-[#B18888]" />
-                                    <div className="space-y-1 text-sm md:text-base">
-                                        <p className="flex justify-between w-full max-w-[200px]">
-                                            <span className="font-medium">{t('footerLibraryHoursWednesday')}</span>
-                                            <span>{t('footerLibraryHoursTimeWed')}</span>
-                                        </p>
-                                        <p className="flex justify-between w-full max-w-[200px]">
-                                            <span className="font-medium">{t('footerLibraryHoursThursday')}</span>
-                                            <span>{t('footerLibraryHoursTimeThu')}</span>
-                                        </p>
-                                        <p className="flex justify-between w-full max-w-[200px]">
-                                            <span className="font-medium">{t('footerLibraryHoursSaturday')}</span>
-                                            <span>{t('footerLibraryHoursTimeSat')}</span>
-                                        </p>
+                                    <div className="grid grid-cols-[80px,1fr] gap-x-2 gap-y-1 text-sm md:text-base">
+                                        <span className="font-medium">{t('footerLibraryHoursWednesday')}</span>
+                                        <span>{t('footerLibraryHoursTimeWed')}</span>
+                                        <span className="font-medium">{t('footerLibraryHoursThursday')}</span>
+                                        <span>{t('footerLibraryHoursTimeThu')}</span>
+                                        <span className="font-medium">{t('footerLibraryHoursSaturday')}</span>
+                                        <span>{t('footerLibraryHoursTimeSat')}</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 items-center">
@@ -107,15 +101,11 @@ export default function Footer() {
                                 </div>
                                 <div className="flex gap-4">
                                     <Clock className="w-5 h-5 mt-1 shrink-0 text-[#B18888]" />
-                                    <div className="space-y-1 text-sm md:text-base">
-                                        <p className="flex justify-between w-full max-w-[200px]">
-                                            <span className="font-medium">{t('footerSanctuaryHoursWednesday')}</span>
-                                            <span>{t('footerSanctuaryHoursTimeWed')}</span>
-                                        </p>
-                                        <p className="flex justify-between w-full max-w-[200px]">
-                                            <span className="font-medium">{t('footerSanctuaryHoursSaturday')}</span>
-                                            <span>{t('footerSanctuaryHoursTimeSat')}</span>
-                                        </p>
+                                    <div className="grid grid-cols-[80px,1fr] gap-x-2 gap-y-1 text-sm md:text-base">
+                                        <span className="font-medium">{t('footerSanctuaryHoursWednesday')}</span>
+                                        <span>{t('footerSanctuaryHoursTimeWed')}</span>
+                                        <span className="font-medium">{t('footerSanctuaryHoursSaturday')}</span>
+                                        <span>{t('footerSanctuaryHoursTimeSat')}</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 items-center">

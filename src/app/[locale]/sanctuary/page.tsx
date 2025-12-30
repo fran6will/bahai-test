@@ -77,7 +77,7 @@ export default function SanctuaryPage() {
                         <div className="md:col-span-5 bg-white p-8 md:p-12 rounded-xl shadow-xl md:-ml-20 relative z-10 border-l-4 border-[#9C4436]">
                             <h2 className="text-3xl font-bold text-[#9C4436] mb-6 font-serif">Planifier votre visite</h2>
                             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                                Le sanctuaire est un havre de paix ouvert à tous. Que ce soit pour la prière, la méditation ou simplement pour découvrir l&apos;histoire de ce lieu unique.
+                                Le sanctuaire est un havre de paix ouvert à tous·tes . Que ce soit pour la prière, la méditation ou simplement pour découvrir l&apos;histoire de ce lieu unique.
                             </p>
                             <ul className="space-y-4 text-gray-600">
                                 <li className="flex items-center gap-3">
