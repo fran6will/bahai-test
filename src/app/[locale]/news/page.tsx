@@ -2,6 +2,7 @@
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import { getNews } from '@/lib/contentful';
+import { getTranslations } from 'next-intl/server';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,6 +13,7 @@ type Props = {
 export default async function NewsPage({ params }: Props) {
     const { locale } = await params;
     const newsItems = await getNews(locale);
+    const t = await getTranslations('NewsPage');
 
     console.log(`[NewsPage] Loaded ${newsItems.length} items for locale ${locale}`);
 
@@ -22,7 +24,7 @@ export default async function NewsPage({ params }: Props) {
                 style={{ backgroundImage: "url('/images/news_header.webp')", backgroundAttachment: 'fixed' }}>
                 <div className="absolute inset-0 bg-black/20"></div>
                 <div className="relative z-10 max-w-4xl mx-auto text-center">
-                    <h1 className="text-3xl md:text-4xl font-bold text-[#F5F0E1] font-serif">Nouvelles</h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-[#F5F0E1] font-serif">{t('title')}</h1>
                 </div>
             </section>
 
@@ -31,9 +33,10 @@ export default async function NewsPage({ params }: Props) {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {newsItems.length > 0 ? (
                             newsItems.map((item) => (
-                                <article
+                                <a
                                     key={item.id}
-                                    className="overflow-hidden flex flex-col h-full"
+                                    href={`/${locale}/news/${item.id}`}
+                                    className="overflow-hidden flex flex-col h-full group cursor-pointer transition-shadow duration-300 hover:shadow-xl"
                                     style={{
                                         backgroundColor: '#F9F7F2',
                                         boxShadow: '0 1px 1px rgba(0,0,0,.03), 0 8px 24px rgba(0,0,0,.06)',
@@ -46,13 +49,13 @@ export default async function NewsPage({ params }: Props) {
                                                 src={item.imageUrl}
                                                 alt={item.imageAlt}
                                                 fill
-                                                className="object-cover transition-transform duration-500 hover:scale-105"
+                                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                                             />
                                         </div>
                                     )}
                                     <div className="p-6 flex-grow flex flex-col">
                                         <div className="text-sm text-gray-500 mb-2 font-serif uppercase tracking-wider">
-                                            {new Date(item.date).toLocaleDateString('fr-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                            {new Date(item.date).toLocaleDateString(locale === 'fr' ? 'fr-CA' : 'en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
                                         </div>
                                         <h3 className="text-2xl font-bold mb-4 font-serif">
                                             {item.title}
@@ -62,14 +65,11 @@ export default async function NewsPage({ params }: Props) {
                                                 ? item.description.substring(0, 150) + '...'
                                                 : item.description}
                                         </p>
-                                        <a
-                                            href={`/${locale}/news/${item.id}`}
-                                            className="text-[#865B5B] hover:text-[#507371] font-bold mt-auto transition-colors inline-flex items-center gap-2"
-                                        >
-                                            Lire d&apos;avantage →
-                                        </a>
+                                        <span className="text-[#865B5B] group-hover:text-[#507371] font-bold mt-auto transition-colors inline-flex items-center gap-2">
+                                            {t('readMore')} →
+                                        </span>
                                     </div>
-                                </article>
+                                </a>
                             ))
                         ) : (
                             // Fallback content
@@ -84,16 +84,16 @@ export default async function NewsPage({ params }: Props) {
                                 >
                                     <div className="p-6">
                                         <div className="text-sm text-gray-500 mb-2">
-                                            MONTRÉAL, CANADA • 24 juin 2024
+                                            {t('fallbackDate1')}
                                         </div>
                                         <h3 className="text-2xl font-bold mb-4 font-serif">
-                                            Hommage à la liberté : Un concert présenté à Montréal en l&apos;honneur de la lutte mondiale pour l&apos;égalité des genres
+                                            {t('fallbackTitle1')}
                                         </h3>
                                         <p className="text-gray-700 leading-relaxed mb-4 font-serif">
-                                            Un événement culturel exceptionnel a réuni la communauté montréalaise pour célébrer l&apos;égalité des genres à travers la musique et les arts. Cette soirée mémorable a mis en lumière l&apos;importance de l&apos;unité et du respect mutuel dans la construction d&apos;une société plus juste.
+                                            {t('fallbackDescription1')}
                                         </p>
                                         <a href="#" className="text-[#865B5B] hover:underline font-medium">
-                                            Lire d&apos;avantage →
+                                            {t('readMore')} →
                                         </a>
                                     </div>
                                 </article>
@@ -108,16 +108,16 @@ export default async function NewsPage({ params }: Props) {
                                 >
                                     <div className="p-6">
                                         <div className="text-sm text-gray-500 mb-2">
-                                            MONTRÉAL, CANADA • 15 mai 2024
+                                            {t('fallbackDate2')}
                                         </div>
                                         <h3 className="text-2xl font-bold mb-4 font-serif">
-                                            Journée de service communautaire : Des jeunes bahá&apos;ís mobilisés pour embellir les parcs de Montréal
+                                            {t('fallbackTitle2')}
                                         </h3>
                                         <p className="text-gray-700 leading-relaxed mb-4 font-serif">
-                                            Plus de 50 jeunes se sont rassemblés pour une journée dédiée au service de la communauté. À travers des activités de nettoyage, de plantation d&apos;arbres et de sensibilisation environnementale, ils ont démontré leur engagement envers le bien-être de leur ville.
+                                            {t('fallbackDescription2')}
                                         </p>
                                         <a href="#" className="text-[#865B5B] hover:underline font-medium">
-                                            Lire d&apos;avantage →
+                                            {t('readMore')} →
                                         </a>
                                     </div>
                                 </article>

@@ -1,12 +1,17 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { MapPin, Mail, Phone, Clock, ArrowUpRight } from 'lucide-react';
 import { Link } from '../navigation';
 import Image from 'next/image';
 
 export default function Footer() {
     const t = useTranslations('HomePageContent');
+    const locale = useLocale();
+    const bahaiOrgBase = locale === 'fr' ? 'https://www.bahai.org/fr' : 'https://www.bahai.org';
+    const bahaiCaBase = locale === 'fr' ? 'https://www.bahai.ca/fr' : 'https://www.bahai.ca';
+    const bahaiLibrary = locale === 'fr' ? 'https://www.bahai.org/fr/library' : 'https://www.bahai.org/library';
+    const bahaiNews = locale === 'fr' ? 'https://news.bahai.org/fr' : 'https://news.bahai.org';
 
     return (
         <footer className="w-full relative">
@@ -22,11 +27,11 @@ export default function Footer() {
                             </h3>
                             <ul className="space-y-5">
                                 {[
-                                    { link: "https://www.bahai.org/fr", label: t('footerWorldCommunity') },
-                                    { link: "https://www.bahai.ca/fr", label: t('footerCanadaBahais') },
-                                    { link: "https://www.bahai.org/library", label: t('footerBahaiWritings') },
+                                    { link: bahaiOrgBase, label: t('footerWorldCommunity') },
+                                    { link: bahaiCaBase, label: t('footerCanadaBahais') },
+                                    { link: bahaiLibrary, label: t('footerBahaiWritings') },
                                     { link: "https://www.relierlescoeurs.org", label: t('footerPrayersAndWritings') },
-                                    { link: "https://news.bahai.org", label: t('footerWorldActivitiesNews') }
+                                    { link: bahaiNews, label: t('footerWorldActivitiesNews') }
                                 ].map((item, idx) => (
                                     <li key={idx}>
                                         <Link
@@ -60,7 +65,7 @@ export default function Footer() {
                                 </div>
                                 <div className="flex gap-4">
                                     <Clock className="w-5 h-5 mt-1 shrink-0 text-[#B18888]" />
-                                    <div className="grid grid-cols-[80px,1fr] gap-x-2 gap-y-1 text-sm md:text-base">
+                                    <div className="grid grid-cols-[auto,1fr] gap-x-4 gap-y-1 text-sm md:text-base">
                                         <span className="font-medium">{t('footerLibraryHoursWednesday')}</span>
                                         <span>{t('footerLibraryHoursTimeWed')}</span>
                                         <span className="font-medium">{t('footerLibraryHoursThursday')}</span>
@@ -101,11 +106,13 @@ export default function Footer() {
                                 </div>
                                 <div className="flex gap-4">
                                     <Clock className="w-5 h-5 mt-1 shrink-0 text-[#B18888]" />
-                                    <div className="grid grid-cols-[80px,1fr] gap-x-2 gap-y-1 text-sm md:text-base">
+                                    <div className="grid grid-cols-[auto,1fr] gap-x-4 gap-y-1 text-sm md:text-base">
                                         <span className="font-medium">{t('footerSanctuaryHoursWednesday')}</span>
                                         <span>{t('footerSanctuaryHoursTimeWed')}</span>
                                         <span className="font-medium">{t('footerSanctuaryHoursSaturday')}</span>
                                         <span>{t('footerSanctuaryHoursTimeSat')}</span>
+                                        <span className="font-medium">{t('footerSanctuaryHoursSunday')}</span>
+                                        <span>{t('footerSanctuaryHoursTimeSun')}</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-4 items-center">

@@ -6,27 +6,30 @@ import ActivityBox from '@/components/ActivityBox';
 import Image from 'next/image';
 import { Link } from '@/navigation';
 import { Quote } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function ChampsActionPage() {
+    const t = useTranslations('ChampsActionPage');
+
     const activities = [
         {
-            title: "Espaces communautaires pour se recueillir",
-            description: "Dans différents foyers de Montréal, les bahá’í·e·s se réunissent avec ami·e·s et familles pour se recueillir, prier et méditer ensemble. Ces rencontres prennent différentes formes selon les participant·e·s et s’adaptent à la réalité de chaque groupe.",
+            title: t('activity1Title'),
+            description: t('activity1Description'),
             image: "/images/activities/social_02.webp"
         },
         {
-            title: "Cercles de partages et de réflexions",
-            description: "Aux côtés de personnes de toutes croyances, les bahá’í·e·s se réunissent pour explorer les Écrits sacrés et leur application au quotidien. La forme de ces rencontres varient selon l’unicité de chaque groupe, mais intègrent souvent arts et sciences pour nourrir l’esprit de façon holistique. Cette démarche vise un double objectif : favoriser la transformation personnelle et contribuer à l’amélioration de la société.",
+            title: t('activity2Title'),
+            description: t('activity2Description'),
             image: "/images/activities/circle_02.webp"
         },
         {
-            title: "Enfants et pré-jeunes",
-            description: "La communauté bahá’íe accorde une grande importance à l’épanouissement spirituel, moral et intellectuel des enfants et des pré-jeunes, leur permettant de développer les capacités nécessaires pour contribuer à leur communauté et grandir en tant qu’individus.",
+            title: t('activity3Title'),
+            description: t('activity3Description'),
             image: "/images/beliefs/prejeune.webp"
         },
         {
-            title: "Action sociale",
-            description: "L’engagement des bahá’í·e·s dans l’action sociale se manifeste de plus en plus à travers des partenariats avec des organismes communautaires, des activités de soutien scolaire et divers projets de service au sein des quartiers de Montréal.",
+            title: t('activity4Title'),
+            description: t('activity4Description'),
             image: "/images/beliefs/action_sociale.webp"
         }
     ];
@@ -38,7 +41,7 @@ export default function ChampsActionPage() {
                 style={{ backgroundImage: "url('/images/beliefs/champaction_header.webp')", backgroundAttachment: 'fixed' }}>
                 <div className="absolute inset-0 bg-black/25"></div>
                 <div className="relative z-10 max-w-4xl mx-auto text-center">
-                    <h1 className="text-3xl md:text-4xl font-bold text-[#F5F0E1] font-serif">Champs d&apos;action</h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-[#F5F0E1] font-serif">{t('title')}</h1>
                 </div>
             </section>
 
@@ -71,9 +74,9 @@ export default function ChampsActionPage() {
                                 style={{ backgroundColor: '#F5F0E1' }}
                             >
                                 <p className="font-serif text-lg md:text-xl leading-relaxed italic text-gray-800 mb-6 relative z-10">
-                                    &quot;Nous ne pouvons pas séparer le cœur humain de l’environnement qui lui est extérieur et dire qu’une fois que l’un ou l’autre aura changé, chaque chose sera améliorée. L’homme fait partie du monde. Sa vie intérieure façonne l’environnement et est elle-même profondément influencée par lui. L’un agit sur l’autre et chaque changement durable dans la vie de l’homme est le résultat de cette interaction.&quot;
+                                    {t('quoteText')}
                                 </p>
-                                <p className="text-gray-600 text-sm font-serif relative z-10">— Shoghi Effendi</p>
+                                <p className="text-gray-600 text-sm font-serif relative z-10">{t('quoteAuthor')}</p>
                             </div>
                         </div>
                     </div>
@@ -86,10 +89,10 @@ export default function ChampsActionPage() {
                     {/* Text Side */}
                     <div className="space-y-6 order-2 lg:order-1">
                         <p className="text-lg md:text-xl leading-relaxed text-gray-800 font-serif">
-                            Ayant à coeur l’établissement de l’unité entre tous les êtres vivants, la communauté bahá’íe participe activement à diverses initiatives, dont la participation aux discours sociaux sur l’égalité des genres, les dialogues interreligieux, le processus de réconciliation avec les peuples autochtones, la protection de l’environnement, ainsi que le soutien aux familles grâce à des programmes éducatifs destinés aux enfants, aux adolescent·e·s et aux adultes.
+                            {t('introText1')}
                         </p>
                         <p className="text-lg md:text-xl leading-relaxed text-gray-800 font-serif">
-                            Aux côtés de leurs am·i·es, voisin·e·s et collaborateur·rice·s, les bahá’í·e·s de Montréal s’efforcent de bâtir des communautés dynamiques en renforçant leur capacité à servir autrui et en créant des amitiés profondes et véritables avec tous·tes celles et ceux qui les ont entourent, basées sur l’entraide et la collaboration.
+                            {t('introText2')}
                         </p>
                     </div>
 
@@ -105,7 +108,7 @@ export default function ChampsActionPage() {
                             />
                         </div>
                         <p className="text-sm text-gray-600 italic text-center font-serif">
-                            Les délégués de la communauté baha’ie pour la 69e commission sur le statut de la femme à l’ONU
+                            {t('imageCaption')}
                         </p>
                     </div>
                 </div>
@@ -131,7 +134,7 @@ export default function ChampsActionPage() {
             <section className="py-20 px-6 text-center" style={{ backgroundColor: '#A5BEC3' }}>
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                        Vous souhaitez participer à l’une de ces activités?
+                        {t('ctaTitle')}
                     </h2>
                     <Link
                         href="/contact"
@@ -141,7 +144,7 @@ export default function ChampsActionPage() {
                             color: '#FBFAF6'
                         }}
                     >
-                        Contactez-nous!
+                        {t('ctaButton')}
                     </Link>
                 </div>
             </section>
