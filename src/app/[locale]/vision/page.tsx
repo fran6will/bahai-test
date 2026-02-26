@@ -78,21 +78,12 @@ export default function VisionPage() {
                                 {[
                                     t('messenger1'), t('messenger2'), t('messenger3'),
                                     t('messenger4'), t('messenger5'), t('messenger6'),
-                                    t('messenger7')
+                                    t('messenger7'), t('messenger8'), t('messenger9')
                                 ].map((name, i) => (
                                     <span key={i} className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
                                         {name}
                                     </span>
                                 ))}
-                                {/* Keep Le Báb & Bahá'u'lláh grouped so they never split onto separate rows */}
-                                <span className="inline-flex gap-3 flex-shrink-0">
-                                    <span className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
-                                        {t('messenger8')}
-                                    </span>
-                                    <span className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
-                                        {t('messenger9')}
-                                    </span>
-                                </span>
                             </div>
                         </div>
 
