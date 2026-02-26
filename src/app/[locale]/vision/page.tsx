@@ -74,16 +74,27 @@ export default function VisionPage() {
                         {/* Visual Timeline / List */}
                         <div className="mb-8">
                             <p className="text-sm font-bold text-[#865B5B] uppercase tracking-wide mb-4 font-serif">{t('divineMessengersLabel')}</p>
-                            <div className="flex flex-wrap justify-center gap-3">
-                                {[
-                                    t('messenger1'), t('messenger2'), t('messenger3'),
-                                    t('messenger4'), t('messenger5'), t('messenger6'),
-                                    t('messenger7'), t('messenger8'), t('messenger9')
-                                ].map((name, i) => (
-                                    <span key={i} className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
-                                        {name}
-                                    </span>
-                                ))}
+                            <div className="flex flex-col items-center gap-3">
+                                <div className="flex flex-wrap justify-center gap-3">
+                                    {[
+                                        t('messenger1'), t('messenger2'), t('messenger3'),
+                                        t('messenger4'), t('messenger5')
+                                    ].map((name, i) => (
+                                        <span key={i} className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
+                                            {name}
+                                        </span>
+                                    ))}
+                                </div>
+                                <div className="flex flex-wrap justify-center gap-3">
+                                    {[
+                                        t('messenger6'), t('messenger7'),
+                                        t('messenger8'), t('messenger9')
+                                    ].map((name, i) => (
+                                        <span key={i + 5} className="inline-block px-4 py-2 bg-[#F9F7F2] text-[#333] rounded-full border border-[#D0C0A8] font-serif shadow-sm text-sm md:text-base">
+                                            {name}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
 
