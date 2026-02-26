@@ -4,6 +4,7 @@ import { getNewsItem } from '@/lib/contentful';
 import { notFound } from 'next/navigation';
 import { Link } from '@/navigation';
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 
 export const dynamic = 'force-dynamic';
 
@@ -14,6 +15,7 @@ type Props = {
 export default async function NewsDetailPage({ params }: Props) {
     const { locale, id } = await params;
     const newsItem = await getNewsItem(id, locale);
+    const t = await getTranslations('NewsDetailPage');
 
     if (!newsItem) {
         notFound();
@@ -39,11 +41,11 @@ export default async function NewsDetailPage({ params }: Props) {
                         {/* Meta Data */}
                         <div className="text-gray-500 mb-6 font-serif uppercase tracking-wider text-sm flex items-center gap-4">
                             <Link href="/news" className="flex items-center hover:text-[#865B5B] transition-colors">
-                                ← Retour aux nouvelles
+                                ← {t('backToNews')}
                             </Link>
                             <span>•</span>
                             <span>
-                                {new Date(newsItem.date).toLocaleDateString('fr-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                {new Date(newsItem.date).toLocaleDateString(locale === 'fr' ? 'fr-CA' : 'en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
                             </span>
                         </div>
 
