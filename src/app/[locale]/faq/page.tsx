@@ -106,7 +106,7 @@ export default function FAQPage() {
                                 </summary>
                                 <div className="mt-4 text-gray-700 leading-relaxed">
                                     {t.rich('faq9Answer', {
-                                        contactLink: (chunks) => <Link href="/contact" className="text-[#865B5B] hover:underline">{t('faq9LinkText')}</Link>
+                                        contactLink: () => <Link href="/contact" className="text-[#865B5B] hover:underline">{t('faq9LinkText')}</Link>
                                     })}
                                 </div>
                             </details>
