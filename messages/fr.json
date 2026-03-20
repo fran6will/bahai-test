@@ -1,6 +1,9 @@
 {
+  "Metadata": {
+    "siteDescription": "Communauté bahá'íe à Montréal — spiritualité, unité et service collectif."
+  },
   "HomePage": {
-    "title": "Bonjour, le monde!"
+    "title": "Communauté bahá'íe de Montréal"
   },
   "Menu": {
     "home": "Accueil",
@@ -69,7 +72,7 @@
     "footerSanctuaryHoursSunday": "Dimanche",
     "footerSanctuaryHoursTimeSun": "13h à 15h",
     "footerSanctuaryVisitButton": "Planifiez votre visite >",
-    "footerCommunityName": "Communauté bahá'í",
+    "footerCommunityName": "Communauté bahá'íe",
     "footerCommunityLocation": "de Montréal",
     "footerCopyright": "© {year} Communauté Bahá'íe de Montréal. Tous droits réservés."
   },

@@ -1,6 +1,9 @@
 {
+  "Metadata": {
+    "siteDescription": "Bahá'í community in Montreal — spirituality, unity, and collective service."
+  },
   "HomePage": {
-    "title": "Hello, World!"
+    "title": "Bahá'í Community of Montreal"
   },
   "Menu": {
     "home": "Home",
